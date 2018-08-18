@@ -20,9 +20,6 @@ export class LoginPage {
   }
 
   loginForm() {
-    console.log(this.login.email);
-    console.log(this.login.senha);
-
     const alert = this.alertCtrl.create({
       title: 'Alert',
       subTitle: `User: ${this.login.email} <br />Senha: ${this.login.senha}`,
