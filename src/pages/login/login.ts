@@ -14,6 +14,7 @@ import { IonicPage, NavController, AlertController } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  public login = {}
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
     this.login = {}
