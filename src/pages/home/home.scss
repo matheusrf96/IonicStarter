@@ -2,14 +2,25 @@ page-home{
     text-align: center;
 }
 
+.content{
+    margin-top: 10%;
+}
+
 #botao-panico{
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-color: map-get($colors, secondary);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: solid;
+    border-width: 3px;
+    border-color: map-get($colors, dark);
+    transition: background-color 0.5s ease-in-out;
 }
 
-#botao-panico:active{
-    background-color: red;
+.botao-texto{
+    font-size: 20px;
+    font-weight: bold;
 }
 
