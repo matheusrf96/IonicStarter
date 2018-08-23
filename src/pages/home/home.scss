@@ -1,4 +1,15 @@
 page-home{
-    align: center;
+    text-align: center;
+}
+
+#botao-panico{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: map-get($colors, secondary);
+}
+
+#botao-panico:active{
+    background-color: red;
 }
 

@@ -14,10 +14,16 @@ import { IonicPage, NavController, AlertController } from 'ionic-angular';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  public login = {}
+  public login = {
+    email: '',
+    senha: ''
+  }
 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
-    this.login = {}
+    this.login = {
+      email: '',
+      senha: ''
+    }
   }
 
   loginForm() {
