@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { MensagemPage } from '../pages/mensagem/mensagem';
+import { AlertasPage } from '../pages/alertas/alertas';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,8 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
-      { title: 'Mensagens', component: MensagemPage }
+      { title: 'Alertas Recebidos', component: MensagemPage },
+      { title: 'Alertas Enviados', component: AlertasPage },
     ];
 
   }
