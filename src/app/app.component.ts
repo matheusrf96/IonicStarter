@@ -28,6 +28,7 @@ export class MyApp {
       { title: 'List', component: ListPage },
       { title: 'Alertas Recebidos', component: MensagemPage },
       { title: 'Alertas Enviados', component: AlertasPage },
+      { title: 'Logout', component: LoginPage },
     ];
 
   }
