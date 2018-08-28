@@ -16,10 +16,11 @@
 // automatically applied to the <body> element in the app.
 
 .botao{
-    background: map-get($colors, lightgraycustom);
-    transition: background 1s ease-in-out;
+    background: map-get($colors, secondary);
+    transition: background-color 2s ease-in-out;
+    box-shadow: none;
 }
 
 .botao:hover{
-    background: #488aff;
+    background: map-get($colors, warning);
 }
