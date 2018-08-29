@@ -61,6 +61,9 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$text-input-md-highlight-color: map-get($colors, secondary);
+$label-md-text-color-focused: map-get($colors, secondary);
+$label-wp-text-color-focused: map-get($colors, secondary);
 
 
 
