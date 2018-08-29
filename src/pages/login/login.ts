@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController, MenuController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,11 +19,12 @@ export class LoginPage {
     senha: ''
   }
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController, public menuCtrl: MenuController) {
     this.login = {
       email: '',
       senha: ''
     }
+    this.menuCtrl.enable(false, 'menu-lateral');
   }
 
   loginForm() {
