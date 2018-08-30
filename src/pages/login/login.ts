@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController, MenuController } from 'ionic-angular';
+import { 
+  IonicPage,
+  NavController,
+  AlertController,
+  MenuController,
+} from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.

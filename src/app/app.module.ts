@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ListaPage } from '../pages/lista/lista';
 import { LoginPage } from '../pages/login/login';
 import { MensagemPage } from '../pages/mensagem/mensagem';
 import { AlertasPage } from '../pages/alertas/alertas';
@@ -17,12 +19,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
+    ListaPage,
     LoginPage,
     MensagemPage,
     AlertasPage,
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -30,6 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
+    ListaPage,
     LoginPage,
     MensagemPage,
     AlertasPage,

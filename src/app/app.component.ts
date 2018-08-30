@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ListaPage } from '../pages/lista/lista';
 import { LoginPage } from '../pages/login/login';
 import { MensagemPage } from '../pages/mensagem/mensagem';
 import { AlertasPage } from '../pages/alertas/alertas';
@@ -26,6 +27,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
+      { title: 'Lista', component: ListaPage },
       { title: 'Alertas Recebidos', component: MensagemPage },
       { title: 'Alertas Enviados', component: AlertasPage },
       { title: 'Logout', component: LoginPage },
