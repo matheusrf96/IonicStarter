@@ -63,13 +63,11 @@ $colors: (
 
 $text-input-md-highlight-color: map-get($colors, secondary);
 $label-md-text-color-focused: map-get($colors, secondary);
-$label-wp-text-color-focused: map-get($colors, secondary);
-
-
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
+$label-wp-text-color-focused: map-get($colors, secondary);
 
 
 
