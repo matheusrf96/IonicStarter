@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
+// Rodsr pelo Cordova
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
