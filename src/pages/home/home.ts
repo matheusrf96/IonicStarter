@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
-// Rodsr pelo Cordova
+// Rodar pelo Cordova
 
 @Component({
   selector: 'page-home',
@@ -15,7 +15,7 @@ export class HomePage {
       public navCtrl: NavController,
       public alertCtrl: AlertController,
       private push: Push,
-      private localNotifications: LocalNotifications,
+      // private localNotifications: LocalNotifications,
     ) {
     this.contagem = 0;
 
