@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
@@ -15,6 +16,7 @@ import { AlertasPage } from '../pages/alertas/alertas';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push } from '@ionic-native/push';
+import { FCM } from '@ionic-native/fcm';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { Push } from '@ionic-native/push';
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -47,6 +50,7 @@ import { Push } from '@ionic-native/push';
     StatusBar,
     SplashScreen,
     Push,
+    FCM,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "203546533299",
+    "firebase_url": "https://hood-95ea5.firebaseio.com",
+    "project_id": "hood-95ea5",
+    "storage_bucket": "hood-95ea5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203546533299:android:73e63bce5f6668be",
+        "android_client_info": {
+          "package_name": "io.securehood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203546533299-4oq8ri2h7807hfp9egrnrr3hn6sijg21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVCNkMdLC1l746bn2wUluhOn3qrXmhqV8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

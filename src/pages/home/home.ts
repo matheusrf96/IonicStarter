@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
+import { HttpClient } from '@angular/common/http/';
+import { HttpHeaders } from '@angular/common/http';
 
 // Rodar pelo Cordova
 
@@ -15,6 +17,7 @@ export class HomePage {
       public navCtrl: NavController,
       public alertCtrl: AlertController,
       private push: Push,
+      private http: HttpClient,
       // private localNotifications: LocalNotifications,
     ) {
     this.contagem = 0;
@@ -71,6 +74,7 @@ export class HomePage {
     else if(this.contagem === 3){
       this.ionicAlert();
       this.initPushNotification();
+      this.sendNotification();
 
       this.contagem = 0;
 
@@ -80,27 +84,51 @@ export class HomePage {
       document.getElementById('texto-apoio').innerHTML = "Toque o botão Ativar por três vezes.";
     }
   }
-
+  
   // to initialize push notifications
   initPushNotification(){
     const options: PushOptions = {
       android: {},
       ios: {
-          alert: 'true',
-          badge: true,
-          sound: 'false'
+        alert: 'true',
+        badge: true,
+        sound: 'false'
       },
       windows: {},
       browser: {
-          pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
       }
     };
-
+    
     const pushObject: PushObject = this.push.init(options);
-
+    
     pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
     pushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));
     pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
   }
-
+  
+  sendNotification() {  
+    let body = {
+      "notification":{
+        "title":"Notificação Teste",
+        "body":"Teste teste teste teste teste",
+        "sound":"default",
+        "click_action":"FCM_PLUGIN_ACTIVITY",
+        "icon":"fcm_push_icon"
+      },
+      "data":{
+        "param1":"value1",
+        "param2":"value2"
+      },
+      "to":"/topics/all",
+      "priority":"high",
+      "restricted_package_name":""
+    }
+    
+    let options = new HttpHeaders().set('Content-Type','application/json');
+    this.http.post("https://fcm.googleapis.com/fcm/send",body,{
+      headers: options.set('Authorization', 'key=YourAuthToken'),
+    })
+    .subscribe();
+  }
 }
