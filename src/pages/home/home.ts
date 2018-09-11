@@ -18,7 +18,6 @@ export class HomePage {
       public alertCtrl: AlertController,
       private push: Push,
       private http: HttpClient,
-      // private localNotifications: LocalNotifications,
     ) {
     this.contagem = 0;
 
@@ -57,7 +56,6 @@ export class HomePage {
 
   ativar() {
     this.contagem++;
-    //console.log('click', this.contagem);
 
     if(this.contagem === 1){
       document.getElementById('botao-panico').style.backgroundColor = "#e9d700";
@@ -84,8 +82,7 @@ export class HomePage {
       document.getElementById('texto-apoio').innerHTML = "Toque o botão Ativar por três vezes.";
     }
   }
-  
-  // to initialize push notifications
+ 
   initPushNotification(){
     const options: PushOptions = {
       android: {},
