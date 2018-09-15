@@ -5,6 +5,7 @@ import {
   AlertController,
   MenuController,
 } from 'ionic-angular';
+import { CadastroPage } from '../cadastro/cadastro';
 
 /**
  * Generated class for the LoginPage page.
@@ -40,6 +41,10 @@ export class LoginPage {
     });
 
     alert.present();
+  }
+
+  cadastrar(){
+    this.navCtrl.push(CadastroPage);
   }
 
 }

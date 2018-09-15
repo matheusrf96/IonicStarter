@@ -1,0 +1,27 @@
+<ion-content padding class="cadastro-content">
+  <h3>Cadastro</h3>
+  <form (ngSubmit)="cadastroForm()" class="form-cadastro">
+      <ion-item>
+        <ion-label floating>Nome de Usuário</ion-label>
+        <ion-input type="text" [(ngModel)]="cadastro.user" name="user"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>E-mail</ion-label>
+        <ion-input type="email" [(ngModel)]="cadastro.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="cadastro.senha1" name="senha1"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Repetir Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="cadastro.senha2" name="senha2"></ion-input>
+        </ion-item>
+      
+      <div class="btn">
+        <button ion-button class="entrar botao" type="submit">
+          <span class="button-text">Cadastrar</span>
+        </button>
+      </div>
+  </form>
+</ion-content>

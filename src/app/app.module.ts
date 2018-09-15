@@ -12,6 +12,7 @@ import { ListaPessoasPage } from '../pages/lista-pessoas/lista-pessoas';
 import { LoginPage } from '../pages/login/login';
 import { MensagemPage } from '../pages/mensagem/mensagem';
 import { AlertasPage } from '../pages/alertas/alertas';
+import { CadastroPage } from '../pages/cadastro/cadastro';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +27,7 @@ import { FCM } from '@ionic-native/fcm';
     ListaPage,
     ListaPessoasPage,
     LoginPage,
+    CadastroPage,
     MensagemPage,
     AlertasPage,
   ],
@@ -43,6 +45,7 @@ import { FCM } from '@ionic-native/fcm';
     ListaPage,
     ListaPessoasPage,
     LoginPage,
+    CadastroPage,
     MensagemPage,
     AlertasPage,
   ],
