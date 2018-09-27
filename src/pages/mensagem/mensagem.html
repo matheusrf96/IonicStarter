@@ -13,15 +13,14 @@
     </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-    <ion-list>
+    <ion-list *ngFor="let item of alertas">
         <button ion-item>
           <ion-avatar item-start>
            <img src="assets/imgs/logo.png">
           </ion-avatar>
-          <h2>Finn</h2>
-          <p>I've had a pretty messed up day. If we just...</p>
+          <h2>{{ item.username }}</h2>
+          <p>{{ item.mensagem }}</p>
       </button>
     </ion-list>
 </ion-content>
