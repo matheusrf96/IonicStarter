@@ -1,2 +1,0 @@
-Exemplo de comunicação com uma de api (repositório https://github.com/matheusrf96/webservice_json_exemplo).
-Não será utilizado no projeto.

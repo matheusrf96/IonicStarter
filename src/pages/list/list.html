@@ -7,17 +7,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
+<ion-content padding>
+  <ion-list *ngFor="let item of contatos">
+      <button ion-item>
+        <ion-avatar item-start>
+         <img src="assets/imgs/logo.png">
+        </ion-avatar>
+        <h2>{{ item.primeiroNome }} {{item.ultimoNome}}</h2>
+        <p>@{{ item.username }}</p>
     </button>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>

@@ -7,8 +7,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ListaPage } from '../pages/lista/lista';
-import { ListaPessoasPage } from '../pages/lista-pessoas/lista-pessoas';
 import { LoginPage } from '../pages/login/login';
 import { MensagemPage } from '../pages/mensagem/mensagem';
 import { AlertasPage } from '../pages/alertas/alertas';
@@ -24,8 +22,6 @@ import { FCM } from '@ionic-native/fcm';
     MyApp,
     HomePage,
     ListPage,
-    ListaPage,
-    ListaPessoasPage,
     LoginPage,
     CadastroPage,
     MensagemPage,
@@ -42,8 +38,6 @@ import { FCM } from '@ionic-native/fcm';
     MyApp,
     HomePage,
     ListPage,
-    ListaPage,
-    ListaPessoasPage,
     LoginPage,
     CadastroPage,
     MensagemPage,

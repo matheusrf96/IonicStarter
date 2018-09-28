@@ -6,8 +6,6 @@ import { FCM } from '@ionic-native/fcm';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ListaPage } from '../pages/lista/lista';
-import { ListaPessoasPage} from '../pages/lista-pessoas/lista-pessoas';
 import { LoginPage } from '../pages/login/login';
 import { MensagemPage } from '../pages/mensagem/mensagem';
 import { AlertasPage } from '../pages/alertas/alertas';
@@ -28,9 +26,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'Lista', component: ListaPage },
-      { title: 'Lista Pessoas', component: ListaPessoasPage },
+      { title: 'Meus Contatos', component: ListPage },
       { title: 'Alertas Recebidos', component: MensagemPage },
       { title: 'Alertas Enviados', component: AlertasPage },
       { title: 'Logout', component: LoginPage },
