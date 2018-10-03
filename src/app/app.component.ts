@@ -3,6 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FCM } from '@ionic-native/fcm';
+import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -20,9 +21,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public fcm: FCM) {
-    this.initializeApp();
-
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+              public fcm: FCM, private push: Push) {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
@@ -32,32 +32,33 @@ export class MyApp {
       { title: 'Logout', component: LoginPage },
     ];
 
+    this.pushSetup();
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      //Notifications
-      this.fcm.subscribeToTopic('all');
-      this.fcm.getToken().then(token=>{
-        console.log(token);
-      })
-      this.fcm.onNotification().subscribe(data=>{
-        if(data.wasTapped){
-          console.log("Received in background");
-        } else {
-          console.log("Received in foreground");
-        };
-      })
-      this.fcm.onTokenRefresh().subscribe(token=>{
-        console.log(token);
-      });
-      //end notifications.
-      
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+  pushSetup(){
+    const options: PushOptions = {
+      android: {
+        senderID: ''
+      },
+      ios: {
+        alert: 'true',
+        badge: true,
+        sound: 'false'
+      },
+      windows: {},
+      browser: {
+        pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+      }
+    };
+   
+    const pushObject: PushObject = this.push.init(options);
+    
+    
+    pushObject.on('notification').subscribe((notification: any) => console.log('Received a notification', notification));
+    
+    pushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));
+    
+    pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
   }
 
   openPage(page) {

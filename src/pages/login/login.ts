@@ -43,7 +43,8 @@ export class LoginPage {
     alert.present();
   }
 
-  cadastrar(){
+  irCadastrar(){
+    console.log("Click");
     this.navCtrl.push(CadastroPage);
   }
 
