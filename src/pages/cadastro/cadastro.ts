@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
-
-/**
- * Generated class for the CadastroPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Http, Headers, RequestOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @IonicPage()
 @Component({
@@ -14,14 +9,18 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
   templateUrl: 'cadastro.html',
 })
 export class CadastroPage {
-  public cadastro = {
+  private http:Http;
+
+  private cadastro = {
     user: '',
     email: '',
     senha1: '',
     senha2: '',
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController, http: Http) {
+    this.http = http;
+    
     this.cadastro = {
       user: '',
       email: '',
@@ -30,6 +29,27 @@ export class CadastroPage {
     }
 
     this.menuCtrl.enable(false, 'menu-lateral');
+  }
+
+  submitData(){
+    let dados = {
+      username: 'Ensaio',
+      email: 'ensaio@example.com',
+      senha: '123'
+    };
+
+    //Preparando cabeçalho HTTP
+
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({headers:headers});
+
+    this.http.post('http://localhost/tcc/api/cadastrar.php', dados, options)
+      .map(res => res.json())
+      .subscribe(data => {
+        console.log(data)
+      });
   }
 
   cadastroForm(){
