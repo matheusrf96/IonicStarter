@@ -82,9 +82,8 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^2.1.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.2" />
     <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
-    <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
     <plugin name="phonegap-plugin-push" spec="^2.2.3">
-        <variable name="SENDER_ID" value="" />
+        <variable name="SENDER_ID" value="203546533299" />
     </plugin>
     <engine name="browser" spec="5.0.4" />
     <engine name="ios" spec="4.5.5" />

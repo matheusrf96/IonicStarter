@@ -3,11 +3,30 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Meus Contatos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <form (ngSubmit)="addContato()" class="add-form">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-9>
+            <ion-item>
+                <ion-label floating>Adicionar Contato</ion-label>
+                <ion-input type="text" [(ngModel)]="cadastro.contato" name="contato"></ion-input>
+              </ion-item>
+        </ion-col>
+        <ion-col>
+            <div class="btn">
+                <button ion-button class="botao add" type="submit">
+                  <span class="button-text">+</span>
+                </button>
+              </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
   <ion-list *ngFor="let item of contatos">
       <button ion-item>
         <ion-avatar item-start>

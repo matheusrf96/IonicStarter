@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar id="menu">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -16,3 +16,28 @@
     <p id="texto-apoio">Toque o botão Ativar por três vezes.</p>
   </div>
 </ion-content>
+
+<ion-footer class="foot">
+    <ion-grid>
+        <ion-row>
+          <ion-col (click)="openContatos();">
+              <button ion-button  clear icon-only>
+                <ion-icon name="contacts"></ion-icon>
+              </button>
+              <!--<p>Contatos</p>-->
+          </ion-col>
+          <ion-col (click)="openAlertasR();">
+            <button ion-button clear icon-only >
+              <ion-icon name="md-megaphone"></ion-icon>
+            </button>
+            <!--<p>Alertas</p>-->
+          </ion-col>
+          <ion-col (click)="openAlertasE();">
+            <button ion-button clear icon-only>
+              <ion-icon name="paper-plane"></ion-icon>
+            </button>
+            <!--<p>Meus Alertas</p>-->
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-footer>

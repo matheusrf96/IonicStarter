@@ -11,16 +11,17 @@ import { LoginPage } from '../pages/login/login';
 import { MensagemPage } from '../pages/mensagem/mensagem';
 import { AlertasPage } from '../pages/alertas/alertas';
 
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
-
   rootPage: any = HomePage;
 
+  @ViewChild(Nav) nav: Nav;
+ 
   pages: Array<{title: string, component: any}>;
-
+    
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
               public fcm: FCM, private push: Push) {
     // used for an example of ngFor and navigation
@@ -33,12 +34,13 @@ export class MyApp {
     ];
 
     this.pushSetup();
+    
   }
 
   pushSetup(){
     const options: PushOptions = {
       android: {
-        senderID: ''
+        senderID: '203546533299'
       },
       ios: {
         alert: 'true',
@@ -59,6 +61,8 @@ export class MyApp {
     pushObject.on('registration').subscribe((registration: any) => console.log('Device registered', registration));
     
     pushObject.on('error').subscribe(error => console.error('Error with Push plugin', error));
+
+    console.log('PUSH ENVIADO');
   }
 
   openPage(page) {

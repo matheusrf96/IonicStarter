@@ -18,6 +18,7 @@ import { Push } from '@ionic-native/push';
 import { FCM } from '@ionic-native/fcm';
 import { GlobalProvider } from '../providers/global/global';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,7 +27,7 @@ import { GlobalProvider } from '../providers/global/global';
     LoginPage,
     CadastroPage,
     MensagemPage,
-    AlertasPage,
+    AlertasPage
   ],
   imports: [
     BrowserModule,
